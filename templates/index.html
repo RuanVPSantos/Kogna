@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kogna</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/background.css">
+    <script src="../static/scripts/script.js" defer></script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: 	#131862;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Kogna</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Lore">Lore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Meus-Personagens">Meus Personagens</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            {% if user: %}
+            <div class="user">
+              {{ user }}
+            </div>
+            <a href="/logout" class="'nav-link">Logout</a>
+            {% if adm: %}
+            <div class="logout">
+              <a href="/adm">
+                configurações de adm
+              </a>
+            </div>
+            {% endif %}
+            {% else %}
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#Login">
+              Login
+            </button>
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </nav>  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: 	#131862; color:white;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="login" method="post">
+            <div class="modal-body">
+                <label class="label">
+                    <span>nome de usuário</span>
+                    <input type="text" autocomplete="off" name="username" class="input" required>
+                  </label>
+                
+                  <label class="label">
+                    <span>senha</span>
+                    <input type="password" autocomplete="off" name="password" class="input" required>
+                  </label>
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#sign_up">
+                Cadastre-se
+              </button>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="sign_up" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: 	#131862; color:white;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="sign_up" method="post">
+            <div class="modal-body">
+              <form action="sign_up" method="post">
+
+                <label class="label">
+                  <span>Nome de usuário</span>
+                    <input type="text" autocomplete="off" name="username" class="input" required>
+                  </label>
+                  <label class="label">
+                    <span>E-mail</span>
+                    <input type="email" autocomplete="off" name="email" class="input" required>
+                  </label>
+                  <label class="label">
+                    <span>Telefone</span>
+                    <input type="tel" autocomplete="off" name="tel" class="input" required>
+                  </label>
+                
+                  <label class="label">
+                    <span>senha</span>
+                    <input type="password" autocomplete="off" name="password" class="input" minlength="8" required>
+                  </label>
+                  <label class="label">
+                    <span>Confirme sua senha</span>
+                    <input type="password" autocomplete="off" name="confirm-password" minlength="8" class="input" required>
+                  </label>
+                
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-secondary" style="background-color: 	#87889c;">Cadastre-se</button>
+            </form>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<main>
+  
+  {% if problema: %}
+  <div class="problema">
+    {{problema}}
+  </div>
+  {%endif %}
+  <div class="night">
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+    <div class="shooting_star"></div>
+  </div>
+</main>
+  
+  
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
